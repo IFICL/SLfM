@@ -12,4 +12,11 @@ ArXiv 2023
 </h4>
 <hr>
 
+This repository contains the official codebase for [Sound Localization from Motion: Jointly Learning Sound Direction and Camera Rotation](https://arxiv.org/abs/2303.11329). [[Project Page](https://ificl.github.io/SLfM/)]
+
+<div align="center">
+  <img width="100%" alt="SLfM Illustration" src="images/method.png">
+</div>
+
+
 ## Code coming soon...
