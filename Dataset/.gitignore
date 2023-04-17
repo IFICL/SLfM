@@ -1,0 +1,11 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+/AI-Habitat/ProcessedData
+
+/LibriSpeech/ProcessedData
+
+/Free-Music-Archive/ProcessedData

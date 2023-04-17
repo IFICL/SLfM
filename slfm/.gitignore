@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+/checkpoints/*
+!/checkpoints/*.md
+!/checkpoints/*.py
+!/checkpoints/*.txt
+!/checkpoints/HM3D-4View-Rotation/*/*/log_eval.txt
+
+/results/*
+!/results/*.md
+!/results/*.py
+!/results/*.txt
+
+/models/*.tar
+/models/*.zip
+
+/greatlakes-scripts/*.out
+/greatlakes-scripts/*/*.out
+
+/vlfb-scripts/*.out

@@ -1,0 +1,126 @@
+{
+    "camera_0_angle": 5.695647424760262,
+    "camera_0_position": [
+        -3.664463520050049,
+        1.610099196434021,
+        3.332679271697998
+    ],
+    "camera_0_rotation_in_quaternion": [
+        0.9795740257146412,
+        -0.19484938847852126,
+        0.048728784110162494,
+        0.009692757806884684
+    ],
+    "camera_1_angle": 317.99019283409154,
+    "camera_1_position": [
+        -3.664463520050049,
+        1.610099196434021,
+        3.332679271697998
+    ],
+    "camera_1_rotation_in_quaternion": [
+        -0.9156118559081883,
+        0.18212652185958003,
+        0.35156037259055,
+        0.06992970598886093
+    ],
+    "camera_2_angle": 347.3424169734188,
+    "camera_2_position": [
+        -3.664463520050049,
+        1.610099196434021,
+        3.332679271697998
+    ],
+    "camera_2_rotation_in_quaternion": [
+        -0.974808068641053,
+        0.193901380674184,
+        0.10811565829214383,
+        0.02150554154170048
+    ],
+    "camera_3_angle": 334.59740414775405,
+    "camera_3_position": [
+        -3.664463520050049,
+        1.610099196434021,
+        3.332679271697998
+    ],
+    "camera_3_rotation_in_quaternion": [
+        -0.9567850364799246,
+        0.19031637667965423,
+        0.2156435953691943,
+        0.04289417806514749
+    ],
+    "relative_angle_between_sound_0_camera_0": 71.98708198617481,
+    "relative_angle_between_sound_0_camera_1": 119.69253489243705,
+    "relative_angle_between_sound_0_camera_2": 90.34031181463264,
+    "relative_angle_between_sound_0_camera_3": 103.08532421420847,
+    "relative_angle_between_sound_1_camera_0": -95.65061165623924,
+    "relative_angle_between_sound_1_camera_1": -47.945156440758204,
+    "relative_angle_between_sound_1_camera_2": -77.29738100245844,
+    "relative_angle_between_sound_1_camera_3": -64.55236802048086,
+    "relative_angle_between_sound_2_camera_0": -70.80908366809663,
+    "relative_angle_between_sound_2_camera_1": -23.103625462236682,
+    "relative_angle_between_sound_2_camera_2": -52.45585245514974,
+    "relative_angle_between_sound_2_camera_3": -39.71083884071581,
+    "scene_id": "Habitat/scene_datasets/hm3d/train/00009-vLpv2VX547B/vLpv2VX547B.basis.glb",
+    "sound_0_camera_0_rir_rt60": [
+        0.191375,
+        0.264125
+    ],
+    "sound_0_camera_1_rir_rt60": [
+        0.201125,
+        0.266875
+    ],
+    "sound_0_camera_2_rir_rt60": [
+        0.18525,
+        0.25925
+    ],
+    "sound_0_camera_3_rir_rt60": [
+        0.195875,
+        0.25325
+    ],
+    "sound_1_camera_0_rir_rt60": [
+        0.26,
+        0.20024999999999998
+    ],
+    "sound_1_camera_1_rir_rt60": [
+        0.252,
+        0.190375
+    ],
+    "sound_1_camera_2_rir_rt60": [
+        0.255625,
+        0.1975
+    ],
+    "sound_1_camera_3_rir_rt60": [
+        0.242,
+        0.19425
+    ],
+    "sound_2_camera_0_rir_rt60": [
+        0.26637500000000003,
+        0.253125
+    ],
+    "sound_2_camera_1_rir_rt60": [
+        0.255,
+        0.257
+    ],
+    "sound_2_camera_2_rir_rt60": [
+        0.254875,
+        0.2525
+    ],
+    "sound_2_camera_3_rir_rt60": [
+        0.260375,
+        0.257625
+    ],
+    "source_0_position": [
+        -4.02232551574707,
+        1.223901629447937,
+        3.254539728164673
+    ],
+    "source_1_position": [
+        -3.2516417503356934,
+        1.3969535827636719,
+        3.332354784011841
+    ],
+    "source_2_position": [
+        -3.5494329929351807,
+        0.9189332127571106,
+        3.2793166637420654
+    ]
+}
