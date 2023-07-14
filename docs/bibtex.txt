@@ -2,6 +2,6 @@
     chen2023sound,
     title={Sound Localization from Motion: Jointly Learning Sound Direction and Camera Rotation},
     author={Chen, Ziyang and Qian, Shengyi and Owens, Andrew},
-    journal={arXiv},
+    journal={International Conference on Computer Vision (ICCV)},
     year={2023}
 }
