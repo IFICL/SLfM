@@ -7,7 +7,7 @@ Ziyang Chen, Shengyi Qian, Andrew Owens
 University of Michigan, Ann Arbor
 </span>
 </br>
-arXiv 2023
+ICCV 2023
 </br>
 </h4>
 <hr>
@@ -83,7 +83,7 @@ If you find this code useful, please consider citing:
     chen2023sound,
     title={Sound Localization from Motion: Jointly Learning Sound Direction and Camera Rotation},
     author={Chen, Ziyang and Qian, Shengyi and Owens, Andrew},
-    journal={arXiv},
+    booktitle = {ICCV},
     year={2023}
 }
 ```
