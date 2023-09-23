@@ -382,7 +382,7 @@ class SLfMGeoNet(SLfMNet):
 
     def score_model_performance(self, res):
         # IMPORTANT: you need to design geometric_weight here
-        geometric_weight = 100.0
+        geometric_weight = 50.0
         score = 1 / (
             self.generative_loss_ratio * res['Spec Loss'] +
             geometric_weight * res['Geometric Loss'] +
