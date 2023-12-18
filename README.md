@@ -48,6 +48,9 @@ sh ./multi-preprocess.sh
 sh ./multi-postprocess.sh
 ```
 
+### Demo Videos
+We also provide self-recorded real-world videos under `Dataset/DemoVideos/RawVideos`. The videos are recorded using iPhone 14 Pro and binaural audio are recorded with [Sennheiser AMBEO Smart Headset](https://www.amazon.com/Sennheiser-AMBEO-Smart-Headset-iOS/dp/B0744PC5J8/ref=asc_df_B0744PC5J8/?tag=hyprod-20&linkCode=df0&hvadid=312026001792&hvpos=&hvnetw=g&hvrand=9381493589681000849&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1019126&hvtargid=pla-450898583753&psc=1&mcid=6a07d1c26fea3d9083a2935a607ea1b1&gclid=CjwKCAiA1fqrBhA1EiwAMU5m_w16nslwxzCBdzRxE-xgPVX7zCJKjCydEeSbH_TRRUnhHiAfVGNaQBoC-TIQAvD_BwE). **The demo videos are for research purposes only**. 
+
 
 ## Pretrained Models
 
