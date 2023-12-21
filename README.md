@@ -7,5 +7,5 @@ Ziyang Chen, Shengyi Qian, Andrew Owens
 University of Michigan
 </span>
 </br>
-ArXiv 2023
+ICCV 2023
 </h4>

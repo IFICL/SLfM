@@ -1,228 +1,259 @@
-<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
-<script type="text/javascript">google.load("jquery", "1.3.2");</script>
-
+<!DOCTYPE html>
 <html>
+
 <head>
-    <title>SLfM</title>
-    <!-- <meta property="og:image" content=images/teaser.png"/> Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-    <meta property="og:title" content="Sound Localization from Motion: Jointly Learning Sound Direction and Camera Rotation" />
-    <meta property="og:description" content="Z. Chen, S. Qian, A. Owens." />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="description" content="Sound Localization from Motion: Jointly Learning Sound Direction and Camera Rotation.">
+  <meta name="keywords" content="Sound Localization, Camera Rotation, Audio-Visual Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sound Localization from Motion</title>
 
-    <!-- webpage template-->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- model-viewer css -->
-    <link rel="stylesheet" href="assets/css/demo-style.css">
 
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
-    <br>
-    <!-- <center> -->
-    <center>
-        <span style="font-size:34px">Sound Localization from Motion:<br>Jointly Learning Sound Direction and Camera Rotation</span>
-    </center>
-    <br><br>
-    <table align=center width=60%>
-        <tr>
-            <td align=center width=33%>
-                <center>
-                    <span style="font-size:20px"><a href="https://ificl.github.io/">Ziyang Chen</a></span>
-                </center>
-            </td>
-            <td align=center width=33%>
-                <center>
-                    <span style="font-size:20px"><a href="https://jasonqsy.github.io/">Shengyi Qian</a></span>
-                </center>
-            </td>
-            <td align=center width=33%>
-                <center>
-                    <span style="font-size:20px"><a href="http://andrewowens.com/">Andrew Owens</a></span>
-                </center>
-            </td>
-        </tr>
-    </table>
-    <br>
-    <table align=center width=60%>
-        <tr>
-            <td align=center width=100%>
-                <center>
-                    <span style="font-size:20px">University of Michigan</span>
-                </center>
-            </td>
-        </tr>
-    </table>
-    <br>
-    <table align=center width=60%>
-        <tr>
-            <td align=center width=100%>
-                <center>
-                    <span style="font-size:20px">ICCV 2023</span>
-                </center>
-            </td>
-        </tr>
-    </table>
-    <br>
-    <table align=center width=60%>
-        <tr>
-            <td align=center width=20%>
-                <center>
-                    <span style="font-size:20px"><a href="https://arxiv.org/abs/2303.11329">[Paper]</a></span>
-                </center>
-            </td>
-            <td align=center width=20%>
-                <center>
-                    <span style="font-size:20px"><a href="https://github.com/IFICL/SLfM">[Github]</a></span>
-                </center>
-            </td>
-            <td align=center width=20%>
-                <center>
-                    <span style="font-size:20px"><a href="./docs/slfm-poster.pdf">[Poster]</a></span>
-                </center>
-            </td>
-            <!-- <td align=center width=20%>
-                <center>
-                    <span style="font-size:20px"><a href="https://www.youtube.com/watch?v=vKlN1vxJtLg&ab_channel=ZiyangChen">[Talk]</a></span>
-                </center>
-            </td>
-            <td align=center width=20%>
-                <center>
-                    <span style="font-size:20px"><a href="https://www.dropbox.com/s/mn7b884xlmsu213/Stereocrw-public.key?dl=0">[Slides]</a></span>
-                </center>
-            </td>
-            <td align=center width=20%>
-                <center>
-                    <span style="font-size:20px"><a href="./docs/poster-4119.pdf">[Poster]</a></span>
-                </center>
-            </td> -->
-        </tr>
-    </table>
-
-    <br>
-
-    <table align=center width=80%>
-        <tr>
-            <td width=100%>
-                <center>
-                    <img src="images/method.png" width="100%"></img><br>
-                </center>
-            </td>
-        </tr>
-        <tr>
-        <td width=95%>
-            <center>
-                <span style="font-size:14px"><i> </i> 
-            </center>
-        </td>
-        </tr>
-    </table>
-    <br>
-    <hr>
-
-    <table align=center width=80%>
-        <center><h1>Abstract</h1></center>
-        <tr>
-            <td class="my-paragraph">
-             The images and sounds that we perceive undergo subtle but geometrically consistent changes as we rotate our heads. In this paper, we use these cues to solve a problem we call <b>Sound Localization from Motion</b> (SLfM): jointly estimating camera rotation and localizing sound sources. We learn to solve these tasks solely through self-supervision. A visual model predicts camera rotation from a pair of images, while an audio model predicts the direction of sound sources from binaural sounds. We train these models to generate predictions that agree with one another. At test time, the models can be deployed independently. To obtain a feature representation that is well-suited to solving this challenging problem, we also propose a method for learning an audio-visual representation through cross-view binauralization: estimating binaural sound from one view, given images and sound from another. Our model can successfully estimate accurate rotations on both real and synthetic scenes, and localize sound sources with accuracy competitive with state-of-the-art self-supervised approaches. 
-            <br><br>
-            </td>
-        </tr>
-    </table>
-    <br><br>
-    <hr>
 
 
-    <!-- <table align=center width=100%>
-        <center>
-            <h1>Talk</h1>
-        </center>
-        <div>
-            <p align="center">
-            <iframe style="width: 70%; height: 50%; min-width:300px" src="https://www.youtube.com/embed/vKlN1vxJtLg" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </p>
-        </div>
-    </table>
-    <br><br>
-    <hr> -->
-
-    <table align=center width=80%>
-        <center>
-            <h1>Qualitative Results</h1>
-        </center>
-        <br>
-        <tr>
-            <td width=100%>
-                <center>
-                    <h2> Predictions on HM3D-SS </h2>
-                </center>
-                <p align="center">
-                
-                    <iframe style="width: 100%; height: 70%; min-width:900px; min-height: 300px;"
-                        src="https://www.youtube.com/embed/Wg0OxSX6akk" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </p>
-                
-            </td>
-        </tr>
-        <tr>
-            <td width=100%>
-            <div>
-                <center>
-                    <br><br>
-                    <h2> Real-world Demo </h2>
-                </center>
-                <p align="center">
-                
-                <iframe style="width: 70%; height: 70%; min-width:600px; min-height: 550px;" src="https://www.youtube.com/embed/rMsl3E5zxhU" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </p>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">Sound Localization from Motion: Jointly Learning Sound Direction and Camera Rotation</h1>
+            <h2 class="title is-5 publication-title">ICCV 2023</h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://ificl.github.io/" target="_blank">Ziyang Chen</a>,</span>
+              <span class="author-block">
+                <a href="https://jasonqsy.github.io/" target="_blank">Shengyi Qian</a>,</span>
+              <span class="author-block">
+                <a href="https://andrewowens.com" target="_blank">Andrew Owens</a>,</span>
             </div>
-            </td>
-        </tr>
-    </table>
-    <br><br>
-    <hr>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">University of Michigan</span>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2303.11329.pdf" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2303.11329" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!--
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (Coming Soon)</span>
+                </a>
+              </span>
+              -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/IFICL/SLfM" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Poster Link. -->
+                <span class="link-block">
+                  <a href="./docs/slfm-poster.pdf"
+                    target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Poster</span>
+                  </a>
+                </span>
+                
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
-    <table align=center width=63%>
-        <center><h1>Paper and Supplementary Material</h1></center>
-        <tr>
-            <td><a href="https://arxiv.org/abs/2303.11329"><img class="layered-paper-big" style="height:175px" src="./images/paper.png"/></a></td>
-            <td><span style="font-size:14pt">Ziyang Chen, Shengyi Qian, Andrew Owens.<br>
-                <b>Sound Localization from Motion:<br>
-                    Jointly Learning Sound Direction and Camera Rotation.</b><br>
-                ICCV 2023.
-                <br><br>
-                (<a href="https://arxiv.org/abs/2303.11329">ArXiv</a>)<br>
-            </td>
-        </tr>
-    </table>
-    <br>
+  <!-- TEASER + INTRO -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="subtitle has-text-centered">
+            <b>tl;dr:</b> We learn to solve camera rotation and spatial sound localization tasks solely through self-supervision from multi-view egocentric data
+          </h2>
+          <div class="is-centered is-max-desktop teaser">
+            <center>
+              <img src="static/images/teaser.png" width="500px"></img><br>
+            </center>
+          </div>
+      </div>
+    </div>
+  </section>
 
-    <table align=center width=60%>
-        <tr>
-            <td><span style="font-size:14pt"><center>
-                <a href="./docs/bibtex.txt">[Bibtex]</a>
-            </center></td>
-        </tr>
-    </table>
 
-    <hr>
-    <br>
+  <!-- OVERVIEW -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              The images and sounds that we perceive undergo subtle but geometrically consistent changes as we rotate our heads. In this paper, we use these cues to solve a problem we call <b>Sound Localization from Motion</b> (SLfM): jointly estimating camera rotation and localizing sound sources. We learn to solve these tasks solely through self-supervision. A visual model predicts camera rotation from a pair of images, while an audio model predicts the direction of sound sources from binaural sounds. We train these models to generate predictions that agree with one another. At test time, the models can be deployed independently. To obtain a feature representation that is well-suited to solving this challenging problem, we also propose a method for learning an audio-visual representation through cross-view binauralization: estimating binaural sound from one view, given images and sound from another. Our model can successfully estimate accurate rotations on both real and synthetic scenes, and localize sound sources with accuracy competitive with state-of-the-art self-supervised approaches.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <table align=center width=70%>
-        <tr>
-            <td width=80%>
-                <left>
-                    <center><h1>Acknowledgements</h1></center>
-                    This work was funded in part by DARPA Semafor and Sony. The views, opinions and/or findings expressed are those of the authors and should not be interpreted as representing the official views or policies of the Department of Defense or the U.S. Government. The webpage template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">Colorization</a> project. 
-                </left>
-            </td>
-        </tr>
-    </table>
+  <!-- METHOD -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered" id="method">Method</h2>
+          <div class="content has-text-justified">
+            <img src="./static/images/method.png" class="center-img" />
+            <p>
+              Our method consists of two parts: (a) Cross-view audio prediction for repesentation learning; and (b) Sound localization from motion: jointly esimating sound direction and camera rotation.
+            </p>
+          
+          <h2 class="title is-4">Learning representation via spatialization</h2>
+          <p>
+              We first learn a feature representation by predicting how changes in images lead to changes in sound in a cross-view binauralization pretext task. We convert mono sound to binaural sound at a target viewpoint, after conditioning the model on observations from a source viewpoint.
+            </p>
+            <center>
+              <img src="./static/images/binauralization.png" class="center-img" width="520px" />
+            </center>
+          
+          <h2 class="title is-4">Estimating pose and localizing sound</h2>
+          <p>
+            We use the representation to jointly solve two pose estimation tasks: visual rotation estimation and binaural sound localization. We train the models to make cross-modal geometric consistency that visual rotation angle, \(\phi_{s,t}\), to be consistent with the difference in predicted sound angles \(\theta_s\) and \(\theta_t\): 
+            \[ \text{cross-modal geometric consistency: } \phi_{s,t} = \theta_t- \theta_s\]
+          </p>
+          <center>
+            <img src="./static/images/slfm_method.png" class="center-img" width="660px" />
+          </center>
+                
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<br>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Paper video. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Qualitative Results</h2>
+          <p>We show some qualitative results on both synthetic data and real-world videos recorded by us.</p>
+          <br>
+          <h2 class="title is-4 has-text-centered" id="method">Qualitative predictions on simulated data</h2>
+
+          <!-- <div class="publication-video"> -->
+            <iframe style="width: 100%; height: 160px;" src="https://www.youtube.com/embed/Wg0OxSX6akk" frameborder="0" allow="autoplay; encrypted-media"
+              allowfullscreen></iframe>
+          <!-- </div>  -->
+          <br>
+
+          
+          <h2 class="title is-4 has-text-centered" id="method">Real-world Demo</h2>
+            <center>
+            <iframe style="width: 600px; height: 560px;" src="https://www.youtube.com/embed/rMsl3E5zxhU" frameborder="0"
+              allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </center>
+
+        </div>
+      </div>
+      <!--/ Paper video. -->
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{chen2023sound,
+  title     = {Sound Localization from Motion: Jointly Learning Sound Direction and Camera Rotation},
+  author    = {Chen, Ziyang and Qian, Shengyi and Owens, Andrew},
+  journal   = {International Conference on Computer Vision (ICCV)},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2303.11329},
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/pdf/2303.11329.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/IFICL" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            
+            <p>
+              This work was funded in part by DARPA Semafor and Sony. The views, opinions and/or findings expressed are those of the authors and should not be interpreted as representing the official views or policies of the Department of Defense or the U.S. Government.
+            </p>
+            <p>
+              Thanks <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> for this website template.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
+
 </html>
