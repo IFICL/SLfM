@@ -171,7 +171,7 @@
           <h2 class="title is-4">Estimating pose and localizing sound</h2>
           <p>
             We use the representation to jointly solve two pose estimation tasks: visual rotation estimation and binaural sound localization. We train the models to make cross-modal geometric consistency that visual rotation angle, \(\phi_{s,t}\), to be consistent with the difference in predicted sound angles \(\theta_s\) and \(\theta_t\): 
-            \[ \text{cross-modal geometric consistency: } \phi_{s,t} = \theta_t- \theta_s\]
+            \[ \text{geometric consistency: } \phi_{s,t} = \theta_t- \theta_s\]
           </p>
           <center>
             <img src="./static/images/slfm_method.png" class="center-img" width="660px" />
@@ -195,18 +195,17 @@
           <br>
           <h2 class="title is-4 has-text-centered" id="method">Qualitative predictions on simulated data</h2>
 
-          <!-- <div class="publication-video"> -->
-            <iframe style="width: 100%; height: 160px;" src="https://www.youtube.com/embed/Wg0OxSX6akk" frameborder="0" allow="autoplay; encrypted-media"
+          <div>
+            <iframe style="width: 100%; height: 160px; border-radius: 10px;" src="https://www.youtube.com/embed/Wg0OxSX6akk" frameborder="0" allow="autoplay; encrypted-media"
               allowfullscreen></iframe>
-          <!-- </div>  -->
-          <br>
+          </div> 
+          <!-- <br> -->
 
-          
           <h2 class="title is-4 has-text-centered" id="method">Real-world Demo</h2>
-            <center>
-            <iframe style="width: 600px; height: 560px;" src="https://www.youtube.com/embed/rMsl3E5zxhU" frameborder="0"
-              allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </center>
+          <div style="aspect-ratio: 1/1; border-radius: 10px; overflow: hidden;">
+            <iframe style="width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/rMsl3E5zxhU"
+              frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
 
         </div>
       </div>
